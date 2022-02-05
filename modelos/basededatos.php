@@ -17,8 +17,6 @@ class BasedeDatos{
         }catch(PDOException $e){
             return "Falló ".$e->getMessage();
         }
-        echo "hola";
-
     }
 
 
