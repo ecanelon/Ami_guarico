@@ -1,6 +1,6 @@
 <?php
 
-require_once "modelos/basededatos.php";
+require_once "modelos/conexion.php";
 
 if(!isset($_GET['c'])){
     require_once "controladores/inicio.controlador.php";
