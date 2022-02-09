@@ -1,5 +1,5 @@
 <?php
-require_once "modelo/conec.php";
+require_once "modelo/conexion.php";
 
 echo "esta en el controlador registrar";
 $objPlan = new Plandesalud();

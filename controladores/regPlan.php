@@ -14,8 +14,8 @@ if ($objPlan->getRepConexion()==false) {
 
 		if (!empty($_POST)){
 
-			$n_contrato= $_POST['n_contrato'];
-			$consulta = $objPlan->Buscar($n_contrato);
+			$id_PlanDeSalud= $_POST['ncontrato'];
+			$consulta = $objPlan->Buscar($id_PlanDeSalud);
 
 
 			if ($consulta['estatus']&& count($consulta)==2) {
