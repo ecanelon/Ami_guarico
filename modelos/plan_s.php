@@ -114,6 +114,7 @@ public $conex;
           $errorReturn += ['info' => "error sql:{$e}"];
           return $errorReturn;
       }
+    }
 
 public function getIdPlanDeSalud()
 {
