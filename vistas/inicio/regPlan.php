@@ -6,27 +6,27 @@
                                     <div class="card-body">
                                       <form action="" class="formulario" method= "post"  id="formulario">
                                                 <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" name="ncontrato"id="inputEmail"  placeholder="name@example.com" />
+                                                <input type="text" class="form-control" name="id_plandesalud"id="id_plandesalud" required />
                                                 <label for="inputEmail">Numero de contrato</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input type="text"  class="form-control" name="nombre" id="inputFirstName"  placeholder="Enter your first name" />
+                                                        <input type="text"  class="form-control" name="nombre" id="inputFirstName"  placeholder="Enter your first name" disabled />
                                                         <label for="inputFirstName">Nombre</label>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-3">
-                                                        <input class="form-control" id="inputFirstName" name="precio" type="text" placeholder="Enter your first name" />
+                                                        <input class="form-control" id="inputFirstName" name="precio" type="text" placeholder="Enter your first name" disabled/>
                                                         <label for="inputFirstName">Precio</label>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" name="ncuotas" id="inputLastName" type="text" placeholder="Enter your last name" />
+                                                        <input class="form-control" name="ncuotas" id="inputLastName" type="text" placeholder="Enter your last name" disabled/>
                                                         <label for="inputLastName">Número de cuotas</label>
                                                     </div>
                                                 </div>

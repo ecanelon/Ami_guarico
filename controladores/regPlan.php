@@ -9,27 +9,27 @@ if ($objPlan->getRepConexion()==false) {
 }else {
 
 	echo "<br>";
-	if (is_file("vista/inicio/".$pagina.".php")) {
+	if (is_file("vistas/inicio/".$pagina.".php")) {
 		$planes = $objPlan->Buscartodo();
 
 		if (!empty($_POST)){
 
-			$id_PlanDeSalud= $_POST['ncontrato'];
-			$consulta = $objPlan->Buscar($id_PlanDeSalud);
+			$id_plandesalud= $_POST['id_plandesalud'];
+			$consulta = $objPlan->Buscar($id_plandesalud);
 
 
 			if ($consulta['estatus']&& count($consulta)==2) {
-				$pagina='planRegistrar';
-				require_once("vista/inicio/".$pagina.".php");//si encuentra el rif la envia a la vista de actualizar
+				$pagina='planModificar';
+				require_once("vistas/inicio/".$pagina.".php");//si encuentra el rif la envia a la vista de actualizar
 			}//fin del if
 			else{
 				echo $pagina;
-				$pagina='regPlan';
-			require_once("vista/inicio/".$pagina.".php");
+				$pagina='planRegistrar';
+			require_once("vistas/inicio/".$pagina.".php");
 			}//fin del else buscar
 
 		}//empty
-		require_once("vista/inicio/".$pagina.".php");
+		require_once("vistas/inicio/".$pagina.".php");
 	}//is_file
 }//fin del else de conexion
 ?>

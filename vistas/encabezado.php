@@ -34,7 +34,7 @@
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
-                        <div class="nav">                            
+                        <div class="nav">
                             <div class="sb-sidenav-menu-heading">Menú</div>
 
 
@@ -68,7 +68,7 @@
                                             <a class="nav-link" href="?c=regempleado">Registro de Empleados</a>
                                             <a class="nav-link" href="register.html">Consulta</a>
                                         </nav>
-                                    </div>                                    
+                                    </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Servicios" aria-expanded="false" aria-controls="Servicios">
                                         Servicios
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -117,8 +117,8 @@
 
 
 
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Plandesalud" aria-expanded="false" aria-controls="Plandesalud">
-                                        Plan de salud
+                                    <a class="nav-link collapsed" href="?pagina=regPlan" data-bs-toggle="collapse" data-bs-target="#Plandesalud" aria-expanded="false" aria-controls="Plandesalud">
+                                        <a href="?c=regPlan">Plan de salud</a>
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="Plandesalud" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
@@ -150,7 +150,7 @@
                                             <a class="nav-link" href="register.html">Pagos</a>
                                         </nav>
                                     </div>
-                                    
+
 
                                 </nav>
                             </div>

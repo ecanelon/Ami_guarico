@@ -6,8 +6,9 @@
                                    <div class="card-body">
                                      <form action="?pagina=planRegistrar" class="formulario" method= "post"  id="formulario">
                                                <div class="form-floating mb-3">
-                                               <input type="text" class="form-control" name="ncontrato"id="inputEmail"  placeholder="name@example.com" />
-                                               <label for="inputEmail">Numero de contrato</label>
+                                               <input type="text" class="form-control" name="id_plandesalud" id="id_plandesalud" value = "<?php echo $id_plandesalud ?>" disabled   />
+                                               <label for="id_plandesalud">Numero de contrato</label>
+                                                 <input type="hidden" name="id_plandesalud" value = "<?php echo $id_plandesalud ?>"></td>
                                            </div>
                                            <div class="row mb-3">
                                                <div class="col-md-6">

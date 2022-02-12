@@ -17,10 +17,11 @@ if (is_file("vistas/inicio/".$pagina.".php")) {
         $objPlan->setNombre($nombre);
         $objPlan->setPrecio($precio);
         $objPlan->setNroCuotas($nro_cuotas);
-        $result = $objPlan->Registrar();
+        $result = $objPlan->Modificar();
 
         if ($result['estatus']==true){
 
+echo "modificacion exitosa";
           echo $pagina;
   				$pagina='regPlan';
   			require_once("vistas/inicio/".$pagina.".php");

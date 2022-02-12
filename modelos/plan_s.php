@@ -6,10 +6,10 @@
 class Plandesalud extends BD
 {
 
-private $id_PlanDeSalud;
+private $id_plandesalud;
 private $nombre;
 private $precio;
-private $cuotas;
+private $nro_cuotas;
 public $conex;
 
 
@@ -21,14 +21,14 @@ public $conex;
   public function Registrar()
   {
 
-      $strSql = 'INSERT INTO Plan_De_Salud (id_PlanDeSalud,nombre,precio,nro_cuotas) VALUES (:id_PlanDeSalud, :nombre, :precio, :nro_cuotas)';
+      $strSql = 'INSERT INTO plan_de_salud(id_plandesalud,nombre,precio,nro_cuotas) VALUES (:id_plandesalud, :nombre, :precio, :nro_cuotas)';
       $respuestaArreglo = '';
 
 
       try {
 
           $strExec = BD::prepare($strSql);
-          $strExec->bindParam(':id_PlanDeSalud', $this->id_PlanDeSalud);
+          $strExec->bindParam(':id_plandesalud', $this->id_plandesalud);
           $strExec->bindParam(':nombre', $this->nombre);
           $strExec->bindParam(':precio', $this->precio);
           $strExec->bindParam(':nro_cuotas', $this->nro_cuotas);
@@ -49,14 +49,14 @@ public $conex;
   public function Modificar()
 
   {
-    echo $this->nombre;
 
-      $strSql = "UPDATE plan_de_salud set id_PlanDeSalud=:id_PlanDeSalud, nombre=:nombre, precio=:precio , nro_cuotas=:nro_cuotas where  id_PlanDeSalud = '$this->id_PlanDeSalud'";
+
+      $strSql = "UPDATE plan_de_salud set id_plandesalud=:id_plandesalud, nombre=:nombre, precio=:precio , nro_cuotas=:nro_cuotas where  id_plandesalud = '$this->id_plandesalud'";
 
       try {
           $strExec = BD::prepare($strSql);
 
-          $strExec->bindParam(':id_PlanDeSalud', $this->id_PlanDeSalud);
+          $strExec->bindParam(':id_plandesalud', $this->id_plandesalud);
           $strExec->bindParam(':nombre', $this->nombre);
           $strExec->bindParam(':precio', $this->precio);
           $strExec->bindParam(':nro_cuotas', $this->nro_cuotas);
@@ -72,9 +72,9 @@ public $conex;
       }
   }
 
-  public function Buscar($id_PlanDeSalud)
+  public function Buscar($id_plandesalud)
   {
-      $strSql = "SELECT * FROM plan_de_salud where id_PlanDeSalud = '$id_PlanDeSalud'";
+      $strSql = "SELECT * FROM plan_de_salud where id_plandesalud = '$id_plandesalud'";
       try {
           $strExec = BD::prepare($strSql);
           $strExec->execute();
@@ -102,29 +102,30 @@ public $conex;
       }
   }
 
-  public function Eliminar($id_PlanDeSalud)
+  public function Eliminar($id_plandesalud)
   {
-      $strSql = "DELETE FROM plan_de_salud where id_PlanDeSalud = '$id_PlanDeSalud'";
+      $strSql = "DELETE FROM plan_de_salud where id_plandesalud = '$id_plandesalud'";
 
       try {
           $strExec = BD::prepare($strSql);
-          $strExec->bindParam(':id_PlanDeSalud', $this->id_PlanDeSalud);
+          $strExec->bindParam(':id_plandesalud', $this->id_plandesalud);
           } catch (PDOException $e) {
           $errorReturn = ['estatus' => false];
           $errorReturn += ['info' => "error sql:{$e}"];
           return $errorReturn;
       }
-    }
 
-public function getIdPlanDeSalud()
+}
+
+public function getIdPlandesalud()
 {
-    return $this->id_PlanDeSalud;
+    return $this->id_plandesalud;
 }
 
 
-public function setIdPlanDeSalud($id_PlanDeSalud)
+public function setIdPlandesalud($id_plandesalud)
 {
-    $this->id_PlanDeSalud = $id_PlanDeSalud;
+    $this->id_plandesalud = $id_plandesalud;
 
 
 }
@@ -158,15 +159,15 @@ public function setPrecio($precio)
 }
 
 
-public function getCuotas()
+public function getNroCuotas()
 {
-    return $this->cuotas;
+    return $this->nro_cuotas;
 }
 
 
-public function setCuotas($cuotas)
+public function setNroCuotas($nro_cuotas)
 {
-    $this->cuotas = $cuotas;
+    $this->nro_cuotas = $nro_cuotas;
 
 
 }
@@ -186,6 +187,5 @@ public function setConex($conex)
 }
 
       }
-
 
  ?>

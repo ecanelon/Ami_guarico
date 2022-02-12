@@ -38,7 +38,7 @@ if ($objPlan->getRepConexion()==false) {
 	}//is_file
 }//fin del else de conexion*/
 
-
+echo "controlador inicio";
 
 
 

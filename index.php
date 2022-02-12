@@ -1,6 +1,6 @@
 <?php
 
-require_once "modelos/conexion.php";
+/*require_once "modelos/conexion.php";
 $conexion= new BD();
 if ($conexion->getRepConexion()==true){
 
@@ -8,7 +8,7 @@ if ($conexion->getRepConexion()==true){
 
 
   		require_once "vistas/encabezado.php";
-  		require_once "vistas/inicio/regempleado.php";
+  		require_once "vistas/inicio/regPlan.php";
   		require_once "vistas/pie.php";
 }
 else { echo "no me pude conectar";
@@ -28,5 +28,19 @@ if(!isset($_GET['c'])){
     $accion = isset($_GET['a']) ? $_GET['a'] : "Inicio";
     call_user_func(array($controlador,$accion));
 }
-}
+}*/
+
+$pagina = "regPlan";
+
+
+ if (!empty($_GET['pagina'])){
+   $pagina = $_GET['pagina'];
+ }
+
+ if(is_file("controladores/".$pagina.".php")){
+    require_once("controladores/".$pagina.".php");
+ }
+ else{
+    echo "PAGINA EN CONSTRUCCIÓN";
+ }
 ?>
