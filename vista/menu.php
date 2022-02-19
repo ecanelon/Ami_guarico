@@ -74,8 +74,8 @@
                                 </a>
                                 <div class="collapse" id="Servicios" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="">Registro de Servicios</a>
-                                        <a class="nav-link" href="">Consulta</a>
+                                        <a class="nav-link" href="?pagina=serviciobuscar">Registro de Servicios</a>
+                                        <a class="nav-link" href="?pagina=listar_servicio">Consulta</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Insumos" aria-expanded="false" aria-controls="Insumos">
@@ -90,8 +90,6 @@
                                 </div>
                             </nav>
                         </div>
-
-
 
 
                         <!--Aqui empieza el primer nivel del menu-->
@@ -116,7 +114,7 @@
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Plandesalud" aria-expanded="false" aria-controls="Plandesalud"> Plan de Salud
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
-                                
+
 
                                 <div class="collapse" id="Plandesalud" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
@@ -125,13 +123,13 @@
                                     </nav>
                                 </div>
                                 <!--**************OPCION de PLAn de Salud *************-->
-                               
+
 
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#clientes" aria-expanded="false" aria-controls="clientes">
                                     Clientes
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
-                                
+
 
                                 <div class="collapse" id="clientes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
@@ -139,13 +137,13 @@
                                         <a class="nav-link" href="?pagina=">Modificar</a>
                                     </nav>
                                 </div>
-                               
+
 
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Cobranza" aria-expanded="false" aria-controls="Cobranza">
                                     Cobranza
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
-                               
+
 
                                 <div class="collapse" id="Cobranza" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
@@ -153,7 +151,7 @@
                                         <a class="nav-link" href="">Pagos</a>
                                     </nav>
                                 </div>
-                           
+
 
                             </nav>
 
