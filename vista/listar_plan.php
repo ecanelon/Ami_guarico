@@ -3,6 +3,11 @@
 			<div class="col-lg-12">
 				<nav class="navbar navbar-light justify-content-between">
 					<h1 class="text-danger navba-brand"><i>Lista Planes de Salud</i></h1>
+					<div class="col-lg-1 mt-2">
+							<form action="?pagina=listar_plan" method="post">
+					<button class="btn btn-danger" name="entrada">Generar Reporte</button>
+				</form>
+				</div>
 
 				</nav>
 			</div>
