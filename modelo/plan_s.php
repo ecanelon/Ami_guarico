@@ -118,6 +118,23 @@ public $conex;
 
 }// fin de eliminar modificado por Lissette
 
+public function Reporte(){
+
+           $strSql = "SELECT * FROM Plan_De_Salud ";
+           $respuestaArreglo = '';
+
+           try {
+               $strExec = BD::prepare($strSql);
+               $strExec->execute();
+               $strExec ->setFetchMode(PDO::FETCH_ASSOC);
+               $respuestaArreglo = $strExec->fetchAll(PDO::FETCH_ASSOC); //retornamos todos los datos de la ejecucion
+               return $respuestaArreglo;
+           } catch (PDOException $e) { //si hay un error en la instruccion sql entramos en el catch
+               $errorReturn = ['estatus' => "false"];
+               $errorReturn += ['info' => "error sql:{$e}"];
+               return $errorReturn; ; //retornamos el contenido de esa variable
+           }// fin del catch
+       }// fin del metodo Consultar
 
 
 
@@ -190,6 +207,7 @@ public function setConex($conex)
 
 
 }
+
 
       }
 
