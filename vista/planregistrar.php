@@ -48,7 +48,7 @@ function ConfirmEnviar() {
                       <div class="col-md-6">
                           <div class="form-floating mb-3 mb-md-9">
                                 <input type="hidden" class="form-control" name="id_plan"  placeholder="Enter your first name"/>
-                            
+
 
                            </div>
                       </div>
@@ -89,6 +89,51 @@ function ConfirmEnviar() {
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-9">
                                 <select  class="form-control select2" name="id_servicio">
+                                            <option value="0">Seleccione servicio:</option>
+                                            <?php
+                                            $query = $mysqli->query("SELECT * FROM servicios");
+
+                                            while ($valores = mysqli_fetch_array($query)) {
+                                              echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                            }
+                                            ?>
+                                        </select>
+
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-9">
+                                <select  class="form-control select2" name="id_servicio2">
+                                            <option value="0">Seleccione servicio:</option>
+                                            <?php
+                                            $query = $mysqli->query("SELECT * FROM servicios");
+
+                                            while ($valores = mysqli_fetch_array($query)) {
+                                              echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                            }
+                                            ?>
+                                        </select>
+
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-9">
+                                <select  class="form-control select2" name="id_servicio3">
+                                            <option value="0">Seleccione servicio:</option>
+                                            <?php
+                                            $query = $mysqli->query("SELECT * FROM servicios");
+
+                                            while ($valores = mysqli_fetch_array($query)) {
+                                              echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                            }
+                                            ?>
+                                        </select>
+
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-9">
+                                <select  class="form-control select2" name="id_servicio4">
                                             <option value="0">Seleccione servicio:</option>
                                             <?php
                                             $query = $mysqli->query("SELECT * FROM servicios");

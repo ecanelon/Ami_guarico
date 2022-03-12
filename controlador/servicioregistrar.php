@@ -9,7 +9,6 @@ if (!isset($_SESSION['usuario']) || $_SESSION['rol_usuario'] != "administrador")
       require_once "vista/menu.php";
       require_once "vista/servicioregistrar.php";
       $objServicio = new Servicio();
-  echo "controlador registrar";
 
       if (isset($_POST['btnguardar'])) {
 

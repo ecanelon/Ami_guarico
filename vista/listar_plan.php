@@ -54,6 +54,9 @@ window.onload = () => {
 							<th scope="col">Precio</th>
 							<th scope="col">Cuotas</th>
               <th scope="col">Servicio</th>
+              <th scope="col">Servicio2</th>
+              <th scope="col">Servicio3</th>
+              <th scope="col">Servicio4</th>
 
 						</tr>
 					</thead>
@@ -68,7 +71,14 @@ window.onload = () => {
 							<td class="text-center"><?php echo $valor['nombre']?></td>
 							<td class="text-center"><?php echo $valor['precio']?></td>
 							<td class="text-center"><?php echo $valor['nro_cuotas']?></td>
-              <td class="text-center"><?php echo $valor['id_servicio']?></td>
+              <td style="display:none;"><?php echo $valor['id_servicio']?></td>
+            	<td class="text-center"><?php echo $valor['nombreservicio']?></td>
+              <td style="display:none;"><?php echo $valor['id_servicio2']?></td>
+              <td class="text-center"><?php echo $valor['nombreservicio2']?></td>
+              <td style="display:none;"><?php echo $valor['id_servicio3']?></td>
+              <td class="text-center"><?php echo $valor['nombreservicio3']?></td>
+              <td style="display:none;"><?php echo $valor['id_servicio4']?></td>
+              <td class="text-center"><?php echo $valor['nombreservicio4']?></td>
 							<td class="text-center">
 								<form action="?pagina=listar_plan" method="post">
 	  							<button class="btn btn-primary" value="<?php echo $valor['id_PlanDeSalud']?>" name="editar"  title="Modificar" onclick="return ConfirmEdit()"><i class="fas fa-pencil-alt"></i></button>

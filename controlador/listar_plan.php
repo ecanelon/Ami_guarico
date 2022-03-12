@@ -32,6 +32,9 @@ if (!isset($_SESSION['usuario'])) {
         $precio=$_POST['precio'];
         $cuota= $_POST['ncuotas'];
         $id_servicio= $_POST['id_servicio'];
+        $id_servicio2= $_POST['id_servicio2'];
+        $id_servicio3= $_POST['id_servicio3'];
+        $id_servicio4= $_POST['id_servicio4'];
 
 
         $objPlan->setIdPlandesalud($idplan);
@@ -39,6 +42,9 @@ if (!isset($_SESSION['usuario'])) {
         $objPlan->setPrecio($precio);
         $objPlan->setNroCuotas($cuota);
         $objPlan->setIdServicio($id_servicio);
+        $objPlan->setIdServicio2($id_servicio2);
+        $objPlan->setIdServicio3($id_servicio3);
+        $objPlan->setIdServicio4($id_servicio4);
 
         $objPlan->Modificar();
 

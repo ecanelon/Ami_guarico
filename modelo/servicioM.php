@@ -20,14 +20,14 @@ public $conex;
   public function Registrar()
   {
 
-      $strSql = 'INSERT INTO servicios(id_servicio,nombre,detalles) VALUES (:id_servicio, :nombre, :detalles)';
+      $strSql = 'INSERT INTO servicios(nombre,detalles) VALUES (:nombre, :detalles)';
       $respuestaArreglo = '';
 
 
       try {
 
           $strExec = BD::prepare($strSql);
-          $strExec->bindParam(':id_servicio', $this->id_servicio);
+        //  $strExec->bindParam(':id_servicio', $this->id_servicio);
           $strExec->bindParam(':nombre', $this->nombre);
           $strExec->bindParam(':detalles', $this->detalles);
           $strExec->execute();
@@ -49,12 +49,12 @@ public $conex;
   {
 
 
-      $strSql = "UPDATE servicios set id_servicio=:id_servicio, nombre=:nombre, detalles=:detalles  where  id_servicio = $this->id_servicio";
+      $strSql = "UPDATE servicios set  nombre=:nombre, detalles=:detalles  where  id_servicio = $this->id_servicio";
 
       try {
           $strExec = BD::prepare($strSql);
 
-          $strExec->bindParam(':id_servicio', $this->id_servicio);
+      //$strExec->bindParam(':id_servicio', $this->id_servicio);
           $strExec->bindParam(':nombre', $this->nombre);
           $strExec->bindParam(':detalles', $this->detalles);
 

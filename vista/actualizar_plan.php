@@ -21,7 +21,10 @@ function ConfirmEnviar() {
 
 
 </script>
-
+<?php
+// Verificamos la conexión con el servidor y la base de datos
+  $mysqli = new mysqli('localhost', 'root', '', 'guarico1');
+?>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -61,6 +64,83 @@ function ConfirmEnviar() {
                                     <span id="cuotas"></span>
                                 </div>
                             </div>
+                              <div class="col-md-6">
+                            <select  class="form-control select2" name="id_servicio">
+                                        <option value="0">Seleccione servicio: </option>
+                                        <?php
+                                        $query = $mysqli->query("SELECT * FROM servicios");
+
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                          if ($plan['id_servicio']==$valores[id_servicio]) {
+
+                                              echo '<option value="'.$valores[id_servicio].'"selected>'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                          } else {
+
+
+                                          echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                        }
+                                      }
+                                        ?>
+                                    </select>
+                                      </div>
+                                      <div class="col-md-6">
+                                    <select  class="form-control select2" name="id_servicio2">
+                                                <option value="0">Seleccione servicio: </option>
+                                                <?php
+                                                $query = $mysqli->query("SELECT * FROM servicios");
+
+                                                while ($valores = mysqli_fetch_array($query)) {
+                                                  if ($plan['id_servicio2']==$valores[id_servicio]) {
+
+                                                      echo '<option value="'.$valores[id_servicio].'"selected>'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                                  } else {
+
+
+                                                  echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                                }
+                                              }
+                                                ?>
+                                            </select>
+                                              </div>
+                                              <div class="col-md-6">
+                                            <select  class="form-control select2" name="id_servicio3">
+                                                        <option value="0">Seleccione servicio: </option>
+                                                        <?php
+                                                        $query = $mysqli->query("SELECT * FROM servicios");
+
+                                                        while ($valores = mysqli_fetch_array($query)) {
+                                                          if ($plan['id_servicio3']==$valores[id_servicio]) {
+
+                                                              echo '<option value="'.$valores[id_servicio].'"selected>'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                                          } else {
+
+
+                                                          echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                                        }
+                                                      }
+                                                        ?>
+                                                    </select>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                    <select  class="form-control select2" name="id_servicio4">
+                                                                <option value="0">Seleccione servicio: </option>
+                                                                <?php
+                                                                $query = $mysqli->query("SELECT * FROM servicios");
+
+                                                                while ($valores = mysqli_fetch_array($query)) {
+                                                                  if ($plan['id_servicio4']==$valores[id_servicio]) {
+
+                                                                      echo '<option value="'.$valores[id_servicio].'"selected>'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                                                  } else {
+
+
+                                                                  echo '<option value="'.$valores[id_servicio].'">'.$valores[id_servicio].'-'.$valores[nombre].'</option>';
+                                                                }
+                                                              }
+                                                                ?>
+                                                            </select>
+                                                              </div>
+
                         </div>
                     </div>
                     <div class="text-center">
