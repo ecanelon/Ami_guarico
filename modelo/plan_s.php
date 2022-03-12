@@ -144,7 +144,17 @@ public $conex;
 
 public function Reporte(){
 
-           $strSql = "SELECT * FROM plan_de_salud ";
+  $strSql = "SELECT id_PlanDeSalud, p.nombre, precio, nro_cuotas,
+   s.id_servicio, s.nombre as nombreservicio,
+   s2.id_servicio as id_servicio2, s2.nombre as nombreservicio2,
+   s3.id_servicio as id_servicio3, s3.nombre as nombreservicio3,
+   s4.id_servicio as id_servicio4, s4.nombre as nombreservicio4
+   FROM plan_de_salud p
+   LEFT JOIN servicios s ON p.id_servicio=s.id_servicio
+   LEFT JOIN servicios s2 ON p.id_servicio2=s2.id_servicio
+   LEFT JOIN servicios s3 ON p.id_servicio3=s3.id_servicio
+   LEFT JOIN servicios s4 ON p.id_servicio4=s4.id_servicio
+   ORDER BY p.id_PlanDeSalud";
            $respuestaArreglo = '';
 
            try {
