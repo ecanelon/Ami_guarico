@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario']) || $_SESSION['rol_usuario'] != "administrador") {
+  header('location: ./');
+  exit();
+}
 
       require_once "vista/menu.php";
       require_once "vista/servicioregistrar.php";

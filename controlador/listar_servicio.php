@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+  header('location: ./');
+  exit();
+}
 
     require_once "modelo/servicioM.php";
     $objServicio = new Servicio();

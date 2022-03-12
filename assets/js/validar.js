@@ -127,12 +127,12 @@ if (form.numCuotas.value == 0) {
 	return false;
 
 }
-if (form.erroresd.value == 0) {
+/*if (form.erroresd.value == 0) {
 	alert("el campo errores está vacío");
 	form.erroresd.value ="";
 	form.erroresd.focus();
 	return false;
 
-}
+}*/
 
 }

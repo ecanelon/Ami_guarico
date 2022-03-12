@@ -18,7 +18,7 @@ th{
 }
 td, th{
 
-	padding: 20px;
+	padding: 21px;
 	border: 1px solid;
 	/*text-align: center; SI QUIERES EL TEXTO CENTRADO USA ESTO Y ELIMINA LA
 	CLASE TEXT-CENTER NO SIRVE AQUI*/
@@ -36,7 +36,7 @@ td, th{
 	<table align="center" >
 		<thead>
 			<tr>
-				<th scope="col">Id</th>
+
 				<th scope="col">Nombre</th>
 				<th scope="col">Precio</th>
 				<th scope="col">Cuotas</th>
@@ -50,7 +50,7 @@ td, th{
 					if (isset($valor['id_PlanDeSalud'])){
 			?>
 				<tr>
-					<th class="text-center"><?php echo $valor['id_PlanDeSalud']?></th>
+
 					<td class="text-center"><?php echo $valor['nombre']?></td>
 					<td class="text-center"><?php echo $valor['precio']?></td>
 					<td class="text-center"><?php echo $valor['nro_cuotas']?></td>

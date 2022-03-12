@@ -54,90 +54,111 @@ public $conex;
           $errorReturn += ['info' => "error sql:{$e}"];
           return $errorReturn;
       }
-  }//fin del metodo registrar
+  }
+
+  //fin del metodo registrar
 
 
 
 
 
 
- //  public function Modificar()
+  public function Modificar()
 
- //  {
+  {
 
 
- //      $strSql = "UPDATE titular set ci_titular=:ci_titular, nombres=:nombres, apellido1=:apellido1 , apellido2=:apellido2 , telefono=:telefono, direccion=:direccion, fecha_nacimiento=:fecha_nacimiento where  ci_titular = $this->ci_titular";
+      $strSql = "UPDATE beneficiarios set ci_beneficiarios=:ci_beneficiarios, ci_titular=:ci_titular, parentesco=:parentesco, nombres=:nombres, apellido1=:apellido1 , apellido2=:apellido2 , telefono=:telefono, direccion=:direccion, fecha_de_nacimiento=:fecha_de_nacimiento where  ci_beneficiarios = $this->ci_beneficiarios";
 
- //      try {
- //          $strExec = BD::prepare($strSql);
+      try {
+          $strExec = BD::prepare($strSql);
 
- //          $strExec->bindParam(':ci_titular', $this->ci_titular);
- //          $strExec->bindParam(':nombres', $this->nombres);
- //          $strExec->bindParam(':apellido1', $this->apellido1);
- //          $strExec->bindParam(':apellido2', $this->apellido2);
- //          $strExec->bindParam(':telefono', $this->telefono);
- //          $strExec->bindParam(':direccion', $this->direccion);
- //          $strExec->bindParam(':fecha_nacimiento', $this->fecha_nacimiento);
- //          $strExec->execute();
- //          //$respuestaArreglo = $strExec->fetchAll();//retornamos todo los datos de la ejecucion
- //          $respuestaArreglo = ['estatus' => true];
- //          return $respuestaArreglo;
+          $strExec->bindParam(':ci_beneficiarios', $this->ci_beneficiarios);
+          $strExec->bindParam(':ci_titular', $this->ci_titular);
+          $strExec->bindParam(':parentesco', $this->parentesco);
+          $strExec->bindParam(':nombres', $this->nombres);
+          $strExec->bindParam(':apellido1', $this->apellido1);
+          $strExec->bindParam(':apellido2', $this->apellido2);
+          $strExec->bindParam(':telefono', $this->telefono);
+          $strExec->bindParam(':direccion', $this->direccion);
+          $strExec->bindParam(':fecha_de_nacimiento', $this->fecha_de_nacimiento);
+          $strExec->execute();
+          //$respuestaArreglo = $strExec->fetchAll();//retornamos todo los datos de la ejecucion
+          $respuestaArreglo = ['estatus' => true];
+          return $respuestaArreglo;
 
- //      } catch (PDOException $e) {
- //          $errorReturn = ['estatus' => false];
- //          $errorReturn += ['info' => "error sql:{$e}"];
- //          return $errorReturn;
- //      }
- //  }
+      } catch (PDOException $e) {
+          $errorReturn = ['estatus' => false];
+          $errorReturn += ['info' => "error sql:{$e}"];
+          return $errorReturn;
+      }
+  }
 
- //  public function Buscar($ci_titular)
- //  {
- //      $strSql = "SELECT * FROM titular where ci_titular = '$ci_titular'";
- //       $respuestaArreglo = '';  
- //      try {
- //          $strExec = BD::prepare($strSql);
- //          $strExec->execute();
- //          $respuestaArreglo = $strExec->fetch(PDO::FETCH_ASSOC);
- //          return $respuestaArreglo;
- //      } catch (PDOException $e) {
- //          $errorReturn = ['estatus' => false];
- //          $errorReturn += ['info' => "error sql:{$e}"];
- //          return $errorReturn;
- //      }
- //  }
- //      public function Buscartodo(){
- //      $strSql = "SELECT * FROM titular";
- //  try {
- //          $strExec = BD::prepare($strSql);
- //          $strExec->execute();
- //          $respuestaArreglo = $strExec->fetchAll(PDO::FETCH_ASSOC);
- //          $respuestaArreglo += ['estatus' => true];
- //          return $respuestaArreglo;
- //      } catch (PDOException $e) {
- //          $errorReturn = ['estatus' => false];
- //          $errorReturn += ['info' => "error sql:{$e}"];
- //          return $errorReturn;
- //      }
- //  }
+  public function Buscar($ci_beneficiarios)
+  {
+      $strSql = "SELECT * FROM beneficiarios where ci_beneficiarios = '$ci_beneficiarios'";
+       $respuestaArreglo = '';  
+      try {
+          $strExec = BD::prepare($strSql);
+          $strExec->execute();
+          $respuestaArreglo = $strExec->fetch(PDO::FETCH_ASSOC);
+          return $respuestaArreglo;
+      } catch (PDOException $e) {
+          $errorReturn = ['estatus' => false];
+          $errorReturn += ['info' => "error sql:{$e}"];
+          return $errorReturn;
+      }
+  }
+      public function Buscartodo(){
+      $strSql = "SELECT * FROM beneficiarios";
+  try {
+          $strExec = BD::prepare($strSql);
+          $strExec->execute();
+          $respuestaArreglo = $strExec->fetchAll(PDO::FETCH_ASSOC);
+          $respuestaArreglo += ['estatus' => true];
+          return $respuestaArreglo;
+      } catch (PDOException $e) {
+          $errorReturn = ['estatus' => false];
+          $errorReturn += ['info' => "error sql:{$e}"];
+          return $errorReturn;
+      }
+  }
 
- //  public function Eliminar()
- //  {
- //      $strSql = "DELETE FROM titular where ci_titular = :ci_titular";
+  public function Eliminar()
+  {
+      $strSql = "DELETE FROM beneficiarios where ci_beneficiarios = :ci_beneficiarios";
 
- //      try {
- //          $strExec = BD::prepare($strSql);
- //          $strExec->bindParam(':ci_titular', $this->ci_titular);
- //          $strExec->execute();
- //          } catch (PDOException $e) {
- //          $errorReturn = ['estatus' => false];
- //          $errorReturn += ['info' => "error sql:{$e}"];
- //          return $errorReturn;
- //      }
+      try {
+          $strExec = BD::prepare($strSql);
+          $strExec->bindParam(':ci_beneficiarios', $this->ci_beneficiarios);
+          $strExec->execute();
+          } catch (PDOException $e) {
+          $errorReturn = ['estatus' => false];
+          $errorReturn += ['info' => "error sql:{$e}"];
+          return $errorReturn;
+      }
 
- // }
+ }
 
  //fin de eliminar modificado por Lissette
 
+ public function Reporte(){
+
+            $strSql = "SELECT * FROM beneficiarios ";
+            $respuestaArreglo = '';
+
+            try {
+                $strExec = BD::prepare($strSql);
+                $strExec->execute();
+                $strExec ->setFetchMode(PDO::FETCH_ASSOC);
+                $respuestaArreglo = $strExec->fetchAll(PDO::FETCH_ASSOC); //retornamos todos los datos de la ejecucion
+                return $respuestaArreglo;
+            } catch (PDOException $e) { //si hay un error en la instruccion sql entramos en el catch
+                $errorReturn = ['estatus' => "false"];
+                $errorReturn += ['info' => "error sql:{$e}"];
+                return $errorReturn; ; //retornamos el contenido de esa variable
+            }// fin del catch
+        }// fin del metodo Consultar
 
 
 
@@ -169,6 +190,7 @@ public function setCedula($ci_titular)
 
 
 }
+
 
 public function getParentesco()
 {

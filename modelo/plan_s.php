@@ -6,10 +6,11 @@
 class Plandesalud extends BD
 {
 
-private $id_plandesalud;
+private $id_PlanDeSalud;
 private $nombre;
 private $precio;
 private $nro_cuotas;
+private $id_servicio;
 public $conex;
 
 
@@ -21,17 +22,17 @@ public $conex;
   public function Registrar()
   {
 
-      $strSql = 'INSERT INTO Plan_De_Salud(id_plandesalud,nombre,precio,nro_cuotas) VALUES (:id_plandesalud, :nombre, :precio, :nro_cuotas)';
+      $strSql = 'INSERT INTO plan_de_salud(nombre,precio,nro_cuotas,id_servicio) VALUES ( :nombre, :precio, :nro_cuotas, :id_servicio)';
       $respuestaArreglo = '';
 
 
       try {
 
           $strExec = BD::prepare($strSql);
-          $strExec->bindParam(':id_plandesalud', $this->id_plandesalud);
           $strExec->bindParam(':nombre', $this->nombre);
           $strExec->bindParam(':precio', $this->precio);
           $strExec->bindParam(':nro_cuotas', $this->nro_cuotas);
+          $strExec->bindParam(':id_servicio', $this->id_servicio);
           $strExec->execute();
 
           //$respuestaArreglo = $strExec->fetchAll();//retornamos todo los datos de la ejecucion
@@ -51,30 +52,32 @@ public $conex;
   {
 
 
-      $strSql = "UPDATE Plan_De_Salud set id_plandesalud=:id_plandesalud, nombre=:nombre, precio=:precio , nro_cuotas=:nro_cuotas where  id_plandesalud = $this->id_plandesalud";
+       $strSql = "UPDATE plan_de_salud set nombre=:nombre, precio=:precio , nro_cuotas=:nro_cuotas where  id_PlanDeSalud = $this->id_PlanDeSalud";
 
       try {
+  
           $strExec = BD::prepare($strSql);
 
-          $strExec->bindParam(':id_plandesalud', $this->id_plandesalud);
           $strExec->bindParam(':nombre', $this->nombre);
           $strExec->bindParam(':precio', $this->precio);
           $strExec->bindParam(':nro_cuotas', $this->nro_cuotas);
+          // $strExec->bindParam(':id_servicio', $this->id_servicio);
           $strExec->execute();
           //$respuestaArreglo = $strExec->fetchAll();//retornamos todo los datos de la ejecucion
           $respuestaArreglo = ['estatus' => true];
           return $respuestaArreglo;
 
       } catch (PDOException $e) {
+        echo $e;
           $errorReturn = ['estatus' => false];
           $errorReturn += ['info' => "error sql:{$e}"];
           return $errorReturn;
       }
   }
 
-  public function Buscar($id_plandesalud)
+  public function Buscar($id_PlanDeSalud)
   {
-      $strSql = "SELECT * FROM Plan_De_Salud where id_plandesalud = '$id_plandesalud'";
+      $strSql = "SELECT * FROM plan_de_salud where id_PlanDeSalud = '$id_PlanDeSalud'";
        $respuestaArreglo = '';
       try {
           $strExec = BD::prepare($strSql);
@@ -88,7 +91,7 @@ public $conex;
       }
   }
       public function Buscartodo(){
-      $strSql = "SELECT * FROM Plan_De_Salud";
+      $strSql = "SELECT * FROM plan_de_salud";
   try {
           $strExec = BD::prepare($strSql);
           $strExec->execute();
@@ -104,11 +107,11 @@ public $conex;
 
   public function Eliminar()
   {
-      $strSql = "DELETE FROM Plan_De_Salud where id_plandesalud = :id_plandesalud";
+      $strSql = "DELETE FROM plan_de_salud where id_PlanDeSalud = :id_PlanDeSalud";
 
       try {
           $strExec = BD::prepare($strSql);
-          $strExec->bindParam(':id_plandesalud', $this->id_plandesalud);
+          $strExec->bindParam(':id_PlanDeSalud', $this->id_PlanDeSalud);
           $strExec->execute();
           } catch (PDOException $e) {
           $errorReturn = ['estatus' => false];
@@ -120,7 +123,7 @@ public $conex;
 
 public function Reporte(){
 
-           $strSql = "SELECT * FROM Plan_De_Salud ";
+           $strSql = "SELECT * FROM plan_de_salud ";
            $respuestaArreglo = '';
 
            try {
@@ -138,16 +141,15 @@ public function Reporte(){
 
 
 
-
 public function getIdPlandesalud()
 {
-    return $this->id_plandesalud;
+    return $this->id_PlanDeSalud;
 }
 
 
-public function setIdPlandesalud($id_plandesalud)
+public function setIdPlandesalud($id_PlanDeSalud)
 {
-    $this->id_plandesalud = $id_plandesalud;
+    $this->id_PlanDeSalud = $id_PlanDeSalud;
 
 
 }
@@ -190,6 +192,19 @@ public function getNroCuotas()
 public function setNroCuotas($nro_cuotas)
 {
     $this->nro_cuotas = $nro_cuotas;
+
+
+}
+
+public function getIdServicio()
+{
+    return $this->id_servicio;
+}
+
+
+public function setIdServicio($id_servicio)
+{
+    $this->id_servicio = $id_servicio;
 
 
 }

@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+  header('location: ./');
+  exit();
+}
       require_once "modelo/bene.php";
       require_once "vista/menu.php";
       require_once "vista/regbeneficiario.php";
@@ -6,7 +11,7 @@
 
 
       if (isset($_POST['btnguardar'])) {
-          echo "Clik en Guardar";
+
 
         $ci_beneficiarios= $_POST['ci_beneficiarios'];
         $ci_titular= $_POST['ci_titular'];
@@ -18,6 +23,16 @@
         $direccion= $_POST['direccion'];
         $fecha_de_nacimiento= $_POST['fecha_de_nacimiento'];
 
+        $result = $objBene->Buscar($ci_beneficiarios);
+        
+  
+        if($result){
+
+          echo'<script type="text/javascript">
+          alert("La cédula del titular ya existe");
+          </script>'; 
+        }
+       else{
 
         $objBene->setCedulabeneficiarios($ci_beneficiarios);
         $objBene->setCedula($ci_titular);
@@ -32,8 +47,10 @@
 
         
         $result = $objBene->Registrar();
-        echo "registrado";
-
+        echo'<script type="text/javascript">
+    alert("Registro guardado exitosamente");
+    </script>';
+  }
      
       } // fin de Guardar
 

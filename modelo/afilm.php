@@ -89,7 +89,7 @@ public $conex;
   public function Buscar($ci_titular)
   {
       $strSql = "SELECT * FROM titular where ci_titular = '$ci_titular'";
-       $respuestaArreglo = '';  
+       $respuestaArreglo = '';
       try {
           $strExec = BD::prepare($strSql);
           $strExec->execute();
@@ -101,6 +101,8 @@ public $conex;
           return $errorReturn;
       }
   }
+
+
       public function Buscartodo(){
       $strSql = "SELECT * FROM titular";
   try {
@@ -132,6 +134,24 @@ public $conex;
 
  }//fin de eliminar modificado por Lissette
 
+
+ public function Reporte(){
+
+            $strSql = "SELECT * FROM titular ";
+            $respuestaArreglo = '';
+
+            try {
+                $strExec = BD::prepare($strSql);
+                $strExec->execute();
+                $strExec ->setFetchMode(PDO::FETCH_ASSOC);
+                $respuestaArreglo = $strExec->fetchAll(PDO::FETCH_ASSOC); //retornamos todos los datos de la ejecucion
+                return $respuestaArreglo;
+            } catch (PDOException $e) { //si hay un error en la instruccion sql entramos en el catch
+                $errorReturn = ['estatus' => "false"];
+                $errorReturn += ['info' => "error sql:{$e}"];
+                return $errorReturn; ; //retornamos el contenido de esa variable
+            }// fin del catch
+        }// fin del metodo Consultar
 
 
 

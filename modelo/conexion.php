@@ -5,11 +5,11 @@
 class BD extends PDO
 {
 	public $host='localhost';
-	public $bd = 'amiguarico1';
-	public $password='';//clave vacía
-	public $user='root';
-	public $repconexion;
-	public $errorconexion;
+		public $bd = 'guarico1';
+		public $password='';
+		public $user='root';
+		public $repconexion;
+		public $errorconexion;
 
 
 	public function __construct()
