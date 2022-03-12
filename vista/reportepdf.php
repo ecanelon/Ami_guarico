@@ -18,7 +18,7 @@ th{
 }
 td, th{
 
-	padding: 15px;
+	padding: 10px;
 	border: 1px solid;
 	/*text-align: center; SI QUIERES EL TEXTO CENTRADO USA ESTO Y ELIMINA LA
 	CLASE TEXT-CENTER NO SIRVE AQUI*/

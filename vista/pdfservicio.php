@@ -38,8 +38,8 @@ td, th{
 			<tr>
 				<th scope="col">Id</th>
 				<th scope="col">Nombre</th>
-				<th scope="col">Precio</th>
-	
+				<th scope="col">Detalles</th>
+
 
 			</tr>
 		</thead>
